@@ -70,7 +70,7 @@ abstract class CameraState {
       next = SensorConfig.single(
         sensor: previous.sensors.first.position == SensorPosition.back
             ? Sensor.position(SensorPosition.front)
-            : Sensor.position(SensorPosition.back),
+            : Sensor.position(SensorPosition.front),
         // TODO Initial values are not set in native when set like this
         aspectRatio: aspectRatio ?? CameraAspectRatios.ratio_4_3,
         zoom: zoom ?? 0.0,
@@ -114,7 +114,7 @@ abstract class CameraState {
               if (sensor.type == SensorType.trueDepth) {
                 sensor.position = SensorPosition.front;
               } else {
-                sensor.position = SensorPosition.back;
+                sensor.position = SensorPosition.front;
               }
 
               sensor.deviceId = deviceId;
